@@ -1,0 +1,3 @@
+#!/bin/bash
+docker build -t temp . &&
+docker run -it temp /bin/bash
