@@ -3,4 +3,5 @@ docker run \
     -v $(pwd):/notebooks \
     -v $(pwd)/data/.:/data \
     -v $(pwd)/models/.:/models \
+    -w /notebooks \
     -it -p 8888:8888 cuth "$@"

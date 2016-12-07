@@ -36,3 +36,11 @@ RUN apt-get install -y libssl-dev
 RUN git clone https://github.com/facebook/iTorch.git && cd iTorch && luarocks make
 
 RUN pip install lutorpy
+RUN luarocks install image
+RUN luarocks install qtlua
+RUN luarocks install camera
+RUN luarocks install inline-c
+# RUN luarocks install neuflow
+
+RUN git clone https://github.com/deepmind/torch-hdf5.git && cd torch-hdf5 && luarocks make
+RUN luarocks install lzmq
