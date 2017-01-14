@@ -1,10 +1,10 @@
-Dockerfile.done: Dockerfile Dockerfile-cupy.done
-	docker build . -t cuth
-	touch Dockerfile.done
+_cuth.done: cuth/Dockerfile _cupy.done
+	docker build cuth -t cuth
+	touch _cuth.done
 
-Dockerfile-cupy.done: Dockerfile-cupy
-	docker build . -f Dockerfile-cupy -t cupy
-	touch Dockerfile-cupy.done
+_cupy.done: cupy/Dockerfile
+	docker build cupy -t cupy
+	touch _cupy.done
 
 clean:
 	rm -f *.done
